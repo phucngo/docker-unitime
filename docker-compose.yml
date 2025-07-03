@@ -44,8 +44,8 @@ services:
             dockerfile: tomcat.Dockerfile
         ports:
             - 8888:8080
-        labels:
-            - "traefik.http.services.unitime-web.loadbalancer.server.port=8080"
+        # labels:
+        #     - "traefik.http.services.unitime-web.loadbalancer.server.port=8080"
         volumes:
             - "unitime-data:/usr/local/tomcat/data"
 
