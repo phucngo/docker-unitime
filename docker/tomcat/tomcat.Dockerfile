@@ -32,7 +32,7 @@ RUN wget -O /tmp/app.zip ${DOWNLOAD_URL}
 RUN unzip /tmp/app.zip -d /tmp
 
 # Move and rename the WAR file from the sub-folder to the webapps directory
-RUN mv /tmp/web/UniTime.war /usr/local/tomcat/webapps/ROOT.war
+RUN mv /tmp/web/UniTime.war /usr/local/tomcat/webapps
 
 # Clean up
 RUN rm /tmp/app.zip && rm -rf /tmp/*
