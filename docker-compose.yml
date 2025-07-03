@@ -43,7 +43,7 @@ services:
             context: ./docker/tomcat/
             dockerfile: tomcat.Dockerfile
         ports:
-            - 8080:8080 
+            - 8888:8080 
         volumes:
             - "unitime-data:/usr/local/tomcat/data"
 
