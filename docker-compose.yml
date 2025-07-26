@@ -16,7 +16,6 @@
 # limitations under the License.
 
 services:
-
     unitime-db:
         container_name: unitime-db
         command: --default-authentication-plugin=mysql_native_password
@@ -33,6 +32,19 @@ services:
         volumes:
             - "unitime-db:/var/lib/mysql"
 
+    unitime-phpmyadmin:
+        image: phpmyadmin/phpmyadmin:latest
+        depends_on:
+            - unitime-db
+        environment:
+            - PMA_HOST=unitime-db
+            - PMA_PORT=3306
+            - PMA_USER=timetable
+            - PMA_PASSWORD=unitime
+        ports:
+            - 8081:80
+        restart: unless-stopped
+        
     unitime-web:
         container_name: unitime-web
         depends_on:
