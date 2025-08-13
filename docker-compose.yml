@@ -56,10 +56,10 @@ services:
             dockerfile: tomcat.Dockerfile
         ports:
             - 8888:8080
-        labels:
-            - traefik.http.middlewares.cors.headers.accesscontrolalloworigin=*
-            - traefik.http.middlewares.cors.headers.accesscontrolallowmethods=GET,OPTIONS,PUT,POST,DELETE
-            - traefik.http.middlewares.cors.headers.accesscontrolallowheaders=*
+        # labels:
+        #     - traefik.http.middlewares.cors.headers.accesscontrolalloworigin=*
+        #     - traefik.http.middlewares.cors.headers.accesscontrolallowmethods=GET,OPTIONS,PUT,POST,DELETE
+        #     - traefik.http.middlewares.cors.headers.accesscontrolallowheaders=*
 
         volumes:
             - "unitime-data:/usr/local/tomcat/data"
