@@ -56,8 +56,16 @@ services:
             dockerfile: tomcat.Dockerfile
         ports:
             - 8888:8080
-        # labels:
-        #     - "traefik.http.services.unitime-web.loadbalancer.server.port=8080"
+        labels:
+             - traefik.enable=true
+             - traefik.http.routers.unitime-web.rule=Host(`unitime.xiontechsolution.com`)
+             - traefik.http.routers.unitime-web.entrypoints=websecure
+             - traefik.http.routers.unitime-web.tls=true
+             - traefik.http.routers.unitime-web.middlewares=cors@docker
+             - traefik.http.middlewares.cors.headers.accesscontrolalloworigin=*
+             - traefik.http.middlewares.cors.headers.accesscontrolallowmethods=GET,OPTIONS,PUT,POST,DELETE
+             - traefik.http.middlewares.cors.headers.accesscontrolallowheaders=*
+
         volumes:
             - "unitime-data:/usr/local/tomcat/data"
 
