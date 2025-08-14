@@ -21,7 +21,7 @@ FROM tomcat:9.0.106-jre21-temurin-noble
 
 # Define the download URL as an argument
 # ARG DOWNLOAD_URL=https://github.com/UniTime/unitime/releases/download/v4.8.204/unitime-4.8_bld204.zip
-ARG DOWNLOAD_URL=https://drive.usercontent.google.com/download?id=12BJqDgM05KNSFQleu3BGm8T9lVAsR94p&export=download&confirm=t
+ARG DOWNLOAD_URL=https://drive.usercontent.google.com/download?id=1gDmbW9yHIHo4mocbHxAQTeF1fQmytOuf&export=download&authuser=0&confirm=t
 
 # Install necessary tools
 RUN apt-get update && apt-get install -y wget unzip
